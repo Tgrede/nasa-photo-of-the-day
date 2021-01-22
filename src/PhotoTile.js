@@ -12,6 +12,7 @@ export default function PhotoTile(props) {
 }
 
 const StyledPhotoTile = styled.img`
+     width: 100%;
      border-radius: 5%;
      box-shadow: 5px 5px 3px black
 `
