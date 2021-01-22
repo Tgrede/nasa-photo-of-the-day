@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
+import styled from 'styled-components'
 import PhotoTile from './PhotoTile'
 import HeaderBar from './HeaderBar'
 import InfoTile from './InfoTile'
 import axios from 'axios'
-import "./App.css";
 import { API_KEY, BASE_URL } from "./constants";
 
-function App() {
+export default function App() {
   const [todaysPhoto, setTodaysPhoto] = useState({})
 
   useEffect(() => {
@@ -18,13 +18,20 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
+    <StyledPage>
+      
+
+
       <HeaderBar />
       <PhotoTile hdImgUrl={todaysPhoto.hdurl} imgUrl={todaysPhoto.url} title={todaysPhoto.title} />
       <InfoTile title={todaysPhoto.title} date={todaysPhoto.date} explanation={todaysPhoto.explanation} />
-      
-    </div>
+    </StyledPage>
   );
 }
 
-export default App;
+const StyledPage = styled.div`
+  color: ${pr => pr.theme.colors.tan};
+  margin: 0;
+  text-align: center;
+`
+

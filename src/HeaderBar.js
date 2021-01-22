@@ -1,7 +1,9 @@
 import React from 'react'
+import logo from './images/logo_apod.png'
+import styled from 'styled-components'
 
 
-export default function HeaderBar(props) {
+function HeaderText(props){
      const getDate = () => {
           const today = new Date()
           return today.toLocaleDateString()
@@ -14,3 +16,23 @@ export default function HeaderBar(props) {
           </div>
      )
 }
+export default function HeaderBar(props) {
+     
+
+     return (
+          <StyledHeaderBar>
+               <img src={logo} alt='logo' />
+               <HeaderText />
+          </StyledHeaderBar>
+     )
+}
+
+const StyledHeaderBar = styled.div`
+     display: flex;
+     justify-content: center;
+     align-items:center;
+     padding-bottom: 1%; 
+     border: 2px solid ${(pr) => pr.theme.colors.tan}
+`
+
+

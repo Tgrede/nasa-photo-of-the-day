@@ -6,7 +6,7 @@ export default function InfoTile(props){
      return (
           <div>
                <h3>Title: {title}</h3>
-               <p><b>Want to know about this picture? ~</b> {explanation}</p>
+               <p><b>Want to know about this picture? ~ </b> {explanation}</p>
           </div>
      )
 }
